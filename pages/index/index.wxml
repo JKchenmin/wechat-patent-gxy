@@ -1,0 +1,19 @@
+<!--index.wxml-->
+ <view class="container">
+ <swiper class="swiper" indicator-dots="true">
+    <block wx:for="{{imgUrls}}" wx:for-index="idx" wx:key="">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image"/>
+        <!-- imgUrls.length-1 -->
+        <block wx:if="{{idx == 0}}">
+        <button bindtap="toHomePage" class="index-btn-to" >点击前往</button>
+        </block>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+
+
+
+

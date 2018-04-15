@@ -1,0 +1,6 @@
+{
+"usingComponents": {
+  "wxc-dialog": "/dist/packages/@minui/wxc-dialog/dist/index"
+},
+"component": true
+}

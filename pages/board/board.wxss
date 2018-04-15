@@ -1,0 +1,15 @@
+.slide swiper {
+  width: 100vw;
+}
+
+.slide swiper image {
+  height: 100%;
+  width: 100%;
+}
+
+.zan-icon{
+  margin-right: 30rpx;
+  font-size: 50rpx;
+  color: skyblue;
+}
+

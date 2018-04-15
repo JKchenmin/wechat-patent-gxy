@@ -1,0 +1,44 @@
+{
+  "pages":[
+    "pages/board/board",
+    "pages/index/index",
+    "pages/search/search",
+    "pages/profile/profile"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "人工智能 AI",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#263238",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/board/board",
+        "iconPath": "images/tabbar/homepage.png",
+        "selectedIconPath": "images/tabbar/homepage_fill.png"
+      },
+      {
+        "text": "学习",
+        "pagePath": "pages/search/search",
+        "iconPath": "images/tabbar/manage.png",
+        "selectedIconPath": "images/tabbar/manage_fill.png"
+      },
+      {
+        "text": "查询",
+        "pagePath": "pages/search/search",
+        "iconPath": "images/tabbar/search.png",
+        "selectedIconPath": "images/tabbar/search_fill.png"
+      },
+      {
+        "text": "个人",
+        "pagePath": "pages/profile/profile",
+        "iconPath": "images/tabbar/mine.png",
+        "selectedIconPath": "images/tabbar/mine_fill.png"
+      }
+    ]
+  }
+}

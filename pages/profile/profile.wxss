@@ -1,0 +1,86 @@
+/* pages/profile/profile.wxss */
+.container {
+  display: flex;
+  flex-direction: column;
+  background:#f5f5f5;
+  /* align-items: center; */
+}
+
+.flex-column-item{
+  background: white;
+  margin: 0rpx 0 25rpx;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.container .user{
+  width: 100vw;
+  height:300rpx;
+}
+
+.container .state{
+  height: 120rpx;
+}
+
+.container .funcs{
+  height: 400rpx;
+}
+
+.user-container{
+  width: calc(100vw - 30rpx);
+  height: 280rpx;
+  margin: 10rpx 15rpx;
+  border-radius: 10rpx;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+.user-container .avator-bg {
+  position: absolute;
+  width: calc(100vw - 30rpx);
+  height:280rpx;
+  z-index: 0;
+  opacity: 90; 
+  border-radius: 10rpx;
+}
+
+.user-container .user-avatar {
+     position: absolute;
+         left: 50%;
+          top: 30rpx;
+        width: 160rpx;
+       height: 160rpx;
+  margin-left: -80rpx;
+border-radius: 160px;
+   box-shadow: 5rpx 7rpx 9rpx rgba(0,0,0,0.6);
+}
+.user-container .user-info{
+        width: 100%;
+       height: 80rpx;
+   margin-top: 200rpx;
+}
+.user-container .user-info .user-info-column{
+        width: 100%;
+        height: 40rpx;
+        line-height: 30rpx;
+      display: block;
+        float: left;
+        clear: both;
+        text-align: center;
+}
+.user-nickname {
+    font-size: 22rpx;
+        color: black;
+}
+
+.user-province {
+  font-size: 30rpx;
+  color: black;
+  font-family: Hiragino Sans GB ;  
+}
+
+.user-city {
+    font-size: 30rpx;
+        color: black;
+  margin-left: 10rpx;
+  font-family: Hiragino Sans GB ;  
+}

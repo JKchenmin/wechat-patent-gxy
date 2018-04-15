@@ -1,0 +1,43 @@
+<view class="container">
+  <view class="slide" scroll-y="false">
+    <swiper indicator-dots="true" autoplay="true" interval="2000" duration="1000">
+      <swiper-item wx:for="{{ boards[0].swiperBg }}" wx:key="id">
+      <!-- 
+      aspectFill 保持纵横比缩放图片，只保证图片的短边能完全显示出来。也就是说，图片通常只在水平或垂直方向是完整的，另一       个方向将会发生截取。
+      aspectFill同样保持图片的宽高比不会变形。但它让图片完全填满整个容器，类似于scaleToFill这种模式。不同的是，            scaleToFill会改变图片的宽高比，而aspectFill不会。 
+      -->
+        <image src="{{ item }}" mode="scaleFill"/>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class="board" scroll-y="false">
+    <view style="height:300rpx;background:#f5f5f5">
+      <view class="zan-icon zan-icon-setting"></view>
+      <view class="zan-icon zan-icon-close"></view>
+      <view class="zan-icon zan-icon-passed"></view>
+      <view class="zan-icon zan-icon-chat"></view>
+      
+      <view class="zan-icon zan-icon-like-o"></view>
+      <view class="zan-icon zan-icon-like"></view>
+      <view class="zan-icon zan-icon-add"></view>
+      <view class="zan-icon zan-icon-add-o"></view>
+
+      <view class="zan-icon zan-icon-edit"></view>
+      <view class="zan-icon zan-icon-checked"></view>
+      <view class="zan-icon zan-icon-shop"></view>
+      <view class="zan-icon zan-icon-qr"></view>
+     
+      <view class="zan-icon zan-icon-home"></view>
+      <view class="zan-icon zan-icon-search"></view>
+      <view class="zan-icon zan-icon-contact"></view>
+      <view class="zan-icon zan-icon-edit"></view>
+    
+    </view>
+    <view style="height:400rpx;background:#e0e0e0">
+    
+    </view>
+    <view style="height:400rpx;background:#f5f5f5">
+    
+    </view>
+  </view>
+</view>
