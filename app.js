@@ -1,5 +1,4 @@
 //app.js
-var qqmapsdk;
 /**
  * WeChat API 模块
  * @type {Object}
@@ -13,7 +12,7 @@ const wechat = require('./utils/wechat.js')
  * 用于调用腾讯的地理位置API
  */
 const QQMapWX = require('./utils/qqmap-wx-jssdk.js')
-
+var qqmapsdk;
 App({
   /**
    * Global shared
@@ -28,17 +27,43 @@ App({
    * WeChat API
    */
   wechat: wechat,
-
+  /**
+   * 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
+   */
   onLaunch: function () {
-    // 实例化腾讯地图API核心类  
+    console.log("my-info: App Launch");
+  },
+  /**
+   * 当小程序启动，或从后台进入前台显示，会触发 onShow
+   */
+  onShow: function () {
+    console.log("my-info: App onShow");
+  },
+  /**
+   * 当小程序从前台进入后台，会触发 onHide
+   */
+  /**
+    前台、后台定义： 当用户点击左上角关闭，或者按了设备 Home 键离开微信，小程序并没有直接销毁，而是进入了后台；当再次进入微信或再次打开小程序，又会从后台进入前台。需要注意的是：只有当小程序进入后台一定时间，或者系统资源占用过高，才会被真正的销毁。
+    关闭小程序（基础库版本1.1.0开始支持）： 当用户从扫一扫、转发等入口(场景值为1007, 1008, 1011, 1025)进入小程序，且没有置顶小程序的情况下退出，小程序会被销毁。
+   */
+  onHide: function () {
+    console.log("my-info: App onHide");
+  }
+})
+
+/**
+ * 获取位置信息
+ */
+/**
+    // 实例化腾讯地图API核心类
     qqmapsdk = new QQMapWX({
-      key: 'BYCBZ-PWMHS-PRBOA-6MTOP-XZRAF-5JBLY'//此处使用你自己申请的key  
+      key: 'BYCBZ-PWMHS-PRBOA-6MTOP-XZRAF-5JBLY'//此处使用你自己申请的key
     });
     // 调用微信api获取经纬度
     wechat.getLocation().then(res => {
           const { latitude, longitude } = res
           console.log("你的经度:" + latitude + "\t你的纬度:" + longitude);
-        
+
           qqmapsdk.reverseGeocoder({
             location: { latitude, longitude },
             success: res => {
@@ -49,7 +74,6 @@ App({
             }
 
           })
-          
+
         })
-  }
-})
+ */

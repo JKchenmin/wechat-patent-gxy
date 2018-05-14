@@ -9,20 +9,16 @@
 .flex-column-item{
   background: white;
   margin: 0rpx 0 25rpx;
-  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 
+/*
+begin 
+  第一部分，user信息板块开始
+*/
 .container .user{
   width: 100vw;
   height:300rpx;
-}
-
-.container .state{
-  height: 120rpx;
-}
-
-.container .funcs{
-  height: 400rpx;
 }
 
 .user-container{
@@ -30,8 +26,17 @@
   height: 280rpx;
   margin: 10rpx 15rpx;
   border-radius: 10rpx;
+  position: relative;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
   overflow: hidden;
+}
+
+.zan-icon-setting {
+  position:absolute;
+  right: 20rpx;
+  top: 10rpx;
+  z-index: 20;
+  color: #424242 !important;
 }
 
 .user-container .avator-bg {
@@ -39,7 +44,7 @@
   width: calc(100vw - 30rpx);
   height:280rpx;
   z-index: 0;
-  opacity: 90; 
+  opacity: 90;
   border-radius: 10rpx;
 }
 
@@ -83,4 +88,65 @@ border-radius: 160px;
         color: black;
   margin-left: 10rpx;
   font-family: Hiragino Sans GB ;  
+}
+
+/*
+  第一部分，user信息板块结束
+end 
+*/
+/*
+begin 
+  第二部分，state功能板块开始
+*/
+.container .state{
+  height: 120rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.state-item {
+  padding: 15rpx 0;
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.zan-icon {
+  font-size: 48rpx;
+  color: #e91e63;
+}
+.zan-text {
+  font-size: 20rpx;
+  color: #d81b60;
+}
+
+/*
+  第二部分，state功能板块开始
+end
+*/
+.container > .funcs{
+  height: calc(100vh - 493rpx);
+  overflow: hidden;
+}
+.container .funcs .zan-panel {
+  margin-top: 0;
+  font-size: 40rpx;
+
+}
+.zan-icon-add-o {
+  position:absolute;
+  bottom: 30rpx;
+  right: 20rpx;
+  font-size:60rpx;
+}
+.panel-icon-left {
+  font-size: 40rpx;
+  margin-left: 20rpx;
+  margin-right: 25rpx;
+}
+
+.panel-icon-right {
+  float: right;
+  font-size: 40rpx;
+  margin-right: 20rpx;
 }

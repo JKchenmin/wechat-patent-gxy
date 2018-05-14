@@ -1,7 +1,9 @@
 <!--pages/profile/profile.wxml-->
 <view class="container">
+  
   <view class="flex-column-item user">
     <view class="user-container">
+      <view class="zan-icon zan-icon-setting"></view>
       <image src="./img/avator_bg.jpeg" class="avator-bg" mode="scaleToFill"/>
       <view style="position:absolute;z-index:1;width: calc(100vw - 30rpx);height:280rpx;">
         <image src="{{userInfo.avatarUrl}}" class="user-avatar"/>
@@ -18,8 +20,41 @@
     </view>
   </view>
   <view class="flex-column-item state">
-
+    <view class="state-item">
+      <view class="zan-icon zan-icon-goods-collect "></view>
+      <text class="zan-text text-like">收藏</text>
+    </view>
+    <view class="state-item">
+      <view class="zan-icon zan-icon-balance-pay "></view>
+      <text class="zan-text text-balance">余额</text>
+    </view>
+    <view class="state-item">
+      <view class="zan-icon zan-icon-shopping-cart "></view>
+      <text class="zan-text text-cart">购物车</text>
+    </view>
+    <view class="state-item">
+      <view class="zan-icon zan-icon-qr "></view>
+      <text class="zan-text text-qr">二维码</text>
+    </view>
   </view>
+  <!-- funcs start -->
   <view class="flex-column-item funcs">
+  <view class="zan-panel">
+    <view style="padding: 20rpx;"><view class="zan-icon zan-icon-records panel-icon-left"></view>我的订单<view class="zan-icon zan-icon-arrow panel-icon-right"></view></view>
   </view>
+  <view class="zan-panel">
+    <view style="padding: 20rpx;"><view class="zan-icon zan-icon-points panel-icon-left"></view>通知公告<view class="zan-icon zan-icon-arrow panel-icon-right"></view></view>
+  </view>
+  <view class="zan-panel">
+    <view style="padding: 20rpx;"><view class="zan-icon zan-icon-add panel-icon-left"></view>发布团队信息<view class="zan-icon zan-icon-arrow panel-icon-right"></view></view>
+  </view>
+  <view class="zan-panel">
+    <view style="padding: 20rpx;"><view class="zan-icon zan-icon-add2 panel-icon-left"></view>发布产品<view class="zan-icon zan-icon-arrow panel-icon-right"></view></view>
+  </view>
+  
+    <!-- add icon -->
+    <view class="zan-icon zan-icon-add-o" ></view>
+    
+  </view>
+  <!-- funcs end -->
 </view>

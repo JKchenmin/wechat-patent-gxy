@@ -28,11 +28,21 @@ function getLocation(type) {
   })
 }
 
+function request(url) {
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url: url,
+      success: resolve,
+      fail: reject
+    })
+  })
+}
 module.exports = {
   login,
   getUserInfo,
   setStorage,
   getStorage,
   getLocation,
+  request,
   original: wx
 }

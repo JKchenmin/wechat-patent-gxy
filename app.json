@@ -2,12 +2,13 @@
   "pages":[
     "pages/board/board",
     "pages/index/index",
+    "pages/study/study",
     "pages/search/search",
     "pages/profile/profile"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#FFF",
     "navigationBarTitleText": "人工智能 AI",
     "navigationBarTextStyle":"black"
   },
@@ -23,15 +24,9 @@
       },
       {
         "text": "学习",
-        "pagePath": "pages/search/search",
-        "iconPath": "images/tabbar/manage.png",
-        "selectedIconPath": "images/tabbar/manage_fill.png"
-      },
-      {
-        "text": "查询",
-        "pagePath": "pages/search/search",
-        "iconPath": "images/tabbar/search.png",
-        "selectedIconPath": "images/tabbar/search_fill.png"
+        "pagePath": "pages/study/study",
+        "iconPath": "images/tabbar/study.png",
+        "selectedIconPath": "images/tabbar/study_fill.png"
       },
       {
         "text": "个人",
@@ -40,5 +35,7 @@
         "selectedIconPath": "images/tabbar/mine_fill.png"
       }
     ]
-  }
+    },
+    "debug": false
+  
 }
