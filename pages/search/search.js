@@ -28,9 +28,9 @@ Page({
     //获取搜索记录 
     let my_search = '';
     //调用api
-    wechat.getStorage("my_search").then(
-      res => my_search = res,err => console.log(err)
-    )
+    if ( typeof wx.getStorageSync("my_search") == 'object'){
+      my_search = wx.getStorageSync("my_search");
+    }
     //如果为空
     if (my_search == '') {
       my_search = { arr: [] };
@@ -47,6 +47,12 @@ Page({
 
 
   },
+  // blurinput(event){
+  //   //完成双向数据绑定
+  //   this.data.key = event.detail.value;
+  //   console.log(this.data.key);
+  // },
+
   get_data() {
     this.setData({
       is_load: true
@@ -96,8 +102,8 @@ Page({
         }
         this.data.my_search.add(key)
         //存入storage
-        wechat.setStorage("my_search", this.data.my_search)
-
+        wx.setStorageSync("my_search", this.data.my_search)
+        this.data.my_search = wx.getStorageSync("my_search");
         wx.hideLoading();
         this.setData({
           is_load: false
@@ -137,6 +143,7 @@ Page({
     wx.showLoading({
       title: '搜索中',
     })
+    console.log(this.data)
     this.get_data()
   },
   search_tip(e) {

@@ -2,7 +2,7 @@
   <view class="search-from">
     <view class="from-input">
       <icon class="search-icon" size="15" type="search" />
-      <input class="search-input" value="{{key}}" placeholder="输入文档关键字" type="text" confirm-type="search" focus="true" bindinput="search_tip" bindconfirm="search" />
+      <input class="search-input" value="{{key}}" placeholder="输入文档关键字" type="text" confirm-type="search" focus="true" bindinput="search_tip" bindconfirm="search" bindblur='' />
     </view>
     <text class="cancel-btn color-danger" bindtap="cancel">取消</text>
   </view>
