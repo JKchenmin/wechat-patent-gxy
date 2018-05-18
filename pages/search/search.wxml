@@ -4,7 +4,7 @@
       <icon class="search-icon" size="15" type="search" />
       <input class="search-input" value="{{key}}" placeholder="输入文档关键字" type="text" confirm-type="search" focus="true" bindinput="search_tip" bindconfirm="search" bindblur='' />
     </view>
-    <text class="cancel-btn color-danger" bindtap="cancel">取消</text>
+    <text class="cancel-btn zan-c-red" bindtap="cancel">取消</text>
   </view>
   <view class="" wx:if="{{search_tip.suggestions.length > 0 && !is_search}}" style="margin-bottom: 20rpx;">
     <view class="my-list-item view-bg" wx:for="{{search_tip.suggestions}}" wx:key="{{item}}">

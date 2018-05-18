@@ -1,1 +1,5 @@
-{}
+{
+  "usingComponents": {
+    "ProItem": "/components/proitem/ProItem"
+  }
+}

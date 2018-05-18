@@ -1,9 +1,10 @@
 .search-from {
   display: flex;
+  padding-right: 20rpx;
 }
 
 .from-input {
-  background: #fff;
+  background: #f6f6f6;
   width: 630rpx;
   height: 60rpx;
   margin: 15rpx 0 15rpx 20rpx;

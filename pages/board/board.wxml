@@ -12,17 +12,10 @@
     </swiper>
   </view>
   <view class="board" scroll-y="false">
-    <view style="height:400rpx;background:#f5f5f5;overflow:hidden;">
       <view class="search-view" wx:if="{{true}}" bindtap="to_search">
         <text class="search-text">点击搜索</text>
         <icon class="search-icon" type="search" size="15" />
       </view>
-    </view>
-    <view style="height:400rpx;background:#e0e0e0">
-
-    </view>
-    <view style="height:400rpx;background:#f5f5f5">
-
-    </view>
+      <ProItem></ProItem> 
   </view>
 </view>
