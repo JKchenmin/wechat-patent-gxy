@@ -7,14 +7,14 @@
   width: 100%;
 }
 
-.zan-icon{
+.zan-icon {
   margin-right: 30rpx;
   font-size: 50rpx;
-
 }
 
 /* pages/search/search.wxss */
-.zan-field__input{
+
+.zan-field__input {
   height: 60rpx;
   padding: 0 15rpx;
   border: 1rpx solid rgba(0, 0, 0, 0.2);
@@ -22,18 +22,22 @@
   border-radius: 12rpx;
   background-color: transparent;
 }
-.zan-search-content{
+
+.zan-search-content {
   display: inline-block;
   vertical-align: middle;
 }
-.zan-search-text{
+
+.zan-search-text {
   font-size: 26rpx;
   display: inline-block;
   vertical-align: middle;
 }
+
 .zan-card {
   padding: 0;
 }
+
 .zan-card__thumb {
   width: 260rpx;
   height: 260rpx;
@@ -41,11 +45,13 @@
   margin-left: 0;
   margin-bottom: 0;
 }
+
 /* search框 */
-.search-view{
+
+.search-view {
   background: #f6f6f6;
   height: 60rpx;
-  margin:30rpx 30rpx 20rpx;
+  margin: 30rpx 30rpx 30rpx;
   border-radius: 10rpx;
   font-size: 24rpx;
   text-align: center;
@@ -55,10 +61,35 @@
   justify-content: space-between;
   align-items: center;
 }
-.search-text{
+
+.search-text {
   line-height: 60rpx;
 }
-.search-icon{
+
+.search-icon {
   line-height: 60rpx;
   height: 30rpx;
+}
+
+/* 瀑布流 */
+/* 
+.col {
+  display: block;
+  float: left;
+  width: 250rpx;
+  height: auto;
+}
+
+.img_con {
+  background-color: #fff;
+  width: 250rpx;
+  display: block;
+  box-sizing: border-box;
+  cursor: pointer;
+} */
+.img_item {
+  width: 48%;
+  margin: 1%;
+  display: inline-block;
+  vertical-align: top;
 }
