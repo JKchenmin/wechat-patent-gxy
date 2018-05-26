@@ -1,9 +1,10 @@
 {
   "pages":[
-    "pages/board/board",
     "pages/index/index",
+    "pages/board/board",
     "pages/study/study",
     "pages/search/search",
+    "pages/contact/contact",
     "pages/profile/profile"
   ],
   "window":{

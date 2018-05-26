@@ -1,13 +1,13 @@
 <!--pages/profile/profile.wxml-->
 <view class="container">
-  
+
   <view class="flex-column-item user">
     <view class="user-container">
       <view class="zan-icon zan-icon-setting"></view>
-      <image src="./img/avator_bg.jpeg" class="avator-bg" mode="scaleToFill"/>
+      <image src="./img/avator_bg.jpeg" class="avator-bg" mode="scaleToFill" />
       <view style="position:absolute;z-index:1;width: calc(100vw - 30rpx);height:280rpx;">
-        <image src="{{userInfo.avatarUrl}}" class="user-avatar"/>
-        <view class="user-info" >
+        <image src="{{userInfo.avatarUrl}}" class="user-avatar" />
+        <view class="user-info">
           <view class="user-info-column">
             <text class="user-nickname">{{ userInfo.nickName}}</text>
           </view>
@@ -15,7 +15,7 @@
             <text class="user-province">{{userInfo.province}}</text>
             <text class="user-city">{{ userInfo.city}}</text>
           </view>
-        </view> 
+        </view>
       </view>
     </view>
   </view>
@@ -39,22 +39,34 @@
   </view>
   <!-- funcs start -->
   <view class="flex-column-item funcs">
-  <view class="zan-panel">
-    <view style="padding: 20rpx;"><view class="zan-icon zan-icon-records panel-icon-left"></view>我的订单<view class="zan-icon zan-icon-arrow panel-icon-right"></view></view>
-  </view>
-  <view class="zan-panel">
-    <view style="padding: 20rpx;"><view class="zan-icon zan-icon-points panel-icon-left"></view>通知公告<view class="zan-icon zan-icon-arrow panel-icon-right"></view></view>
-  </view>
-  <view class="zan-panel">
-    <view style="padding: 20rpx;"><view class="zan-icon zan-icon-add panel-icon-left"></view>发布团队信息<view class="zan-icon zan-icon-arrow panel-icon-right"></view></view>
-  </view>
-  <view class="zan-panel">
-    <view style="padding: 20rpx;"><view class="zan-icon zan-icon-add2 panel-icon-left"></view>发布产品<view class="zan-icon zan-icon-arrow panel-icon-right"></view></view>
-  </view>
-  
+    <view class="zan-panel">
+      <view style="padding: 20rpx;">
+        <view class="zan-icon zan-icon-records panel-icon-left"></view>我的订单
+        <view class="zan-icon zan-icon-arrow panel-icon-right"></view>
+      </view>
+    </view>
+    <view class="zan-panel">
+      <view style="padding: 20rpx;">
+        <view class="zan-icon zan-icon-points panel-icon-left"></view>通知公告
+        <view class="zan-icon zan-icon-arrow panel-icon-right"></view>
+      </view>
+    </view>
+    <view class="zan-panel">
+      <view style="padding: 20rpx;">
+        <view class="zan-icon zan-icon-add panel-icon-left"></view>发布团队信息
+        <view class="zan-icon zan-icon-arrow panel-icon-right"></view>
+      </view>
+    </view>
+    <view class="zan-panel">
+      <view style="padding: 20rpx;">
+        <view class="zan-icon zan-icon-add2 panel-icon-left"></view>发布产品
+        <view class="zan-icon zan-icon-arrow panel-icon-right"></view>
+      </view>
+    </view>
     <!-- add icon -->
-    <view class="zan-icon zan-icon-add-o" ></view>
-    
+    <view class="contact-robot" bindtap="contact">
+    </view>
   </view>
   <!-- funcs end -->
+  
 </view>

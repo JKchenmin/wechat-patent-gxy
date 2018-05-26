@@ -1,0 +1,9 @@
+<view class="container">
+<scroll-view scroll-y="true" class="scroll-view" bindscrolltolower="">
+
+</scroll-view>
+<view class="input-text">
+  <input class="input-mes" type="text" value="{{inputText}}"></input>
+  <button class="input-button" bindtap="sendText">发送</button>
+</view>
+</view>

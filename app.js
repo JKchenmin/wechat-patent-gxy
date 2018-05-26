@@ -54,26 +54,22 @@ App({
 /**
  * 获取位置信息
  */
-/**
-    // 实例化腾讯地图API核心类
-    qqmapsdk = new QQMapWX({
-      key: 'BYCBZ-PWMHS-PRBOA-6MTOP-XZRAF-5JBLY'//此处使用你自己申请的key
-    });
-    // 调用微信api获取经纬度
-    wechat.getLocation().then(res => {
-          const { latitude, longitude } = res
-          console.log("你的经度:" + latitude + "\t你的纬度:" + longitude);
-
-          qqmapsdk.reverseGeocoder({
-            location: { latitude, longitude },
-            success: res => {
-              console.log("你的地理位置:\n" + res.result.address);
-            },
-            fail: res => {
-              console.log(res);
-            }
-
-          })
-
-        })
- */
+// 实例化腾讯地图API核心类
+qqmapsdk = new QQMapWX({
+  //自己申请的key
+  key: 'BYCBZ-PWMHS-PRBOA-6MTOP-XZRAF-5JBLY'
+});
+// 调用微信api获取经纬度
+wechat.getLocation().then(res => {
+  const { latitude, longitude } = res
+  console.log("你的经度:" + latitude + "\t你的纬度:" + longitude);
+  qqmapsdk.reverseGeocoder({
+    location: { latitude, longitude },
+    success: res => {
+      console.log("你的地理位置:\n" + res.result.address);
+    },
+    fail: res => {
+      console.log(res);
+    }
+  })
+})

@@ -6,14 +6,10 @@
         <image src="{{item}}" class="slide-image"/>
         <!-- imgUrls.length-1 -->
         <block wx:if="{{idx == 0}}">
-        <button bindtap="toHomePage" class="index-btn-to" >点击前往</button>
+        <!-- 2.02以后，getUserInfo必须先授权，采用button绑定的方式授权 -->
+        <button open-type='getUserInfo' bindtap="toHomePage" class="index-btn-to" >点击前往</button>
         </block>
       </swiper-item>
     </block>
   </swiper>
 </view>
-
-
-
-
-

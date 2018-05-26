@@ -124,8 +124,8 @@ begin
   第二部分，state功能板块开始
 end
 */
-.container > .funcs{
-  height: calc(100vh - 493rpx);
+.container .funcs{
+  height: calc(100vh - 470rpx);
   overflow: hidden;
 }
 .container .funcs .zan-panel {
@@ -133,12 +133,7 @@ end
   font-size: 40rpx;
 
 }
-.zan-icon-add-o {
-  position:absolute;
-  bottom: 30rpx;
-  right: 20rpx;
-  font-size:60rpx;
-}
+
 .panel-icon-left {
   font-size: 40rpx;
   margin-left: 20rpx;
@@ -149,4 +144,13 @@ end
   float: right;
   font-size: 40rpx;
   margin-right: 20rpx;
+}
+/* 聊天机器人 */
+.contact-robot {
+  position:absolute;
+  height: 60rpx;
+  width: 60rpx;
+  bottom: 30rpx;
+  right: 20rpx;
+  background: gray;
 }

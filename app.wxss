@@ -1,2 +1,2 @@
 /**app.wxss**/
-@import "dist/zanui/index.wxss";
+ @import "dist/zanui/index.wxss"; 

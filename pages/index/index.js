@@ -9,10 +9,9 @@ Page({
       "./img/3.jpeg"
     ]
   },
-  toHomePage: function(){
+  toHomePage() {
     wx.switchTab({
       url: '../board/board'
-    })
+    });
   }
-
 })

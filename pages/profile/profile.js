@@ -13,27 +13,31 @@ Page({
       avatarUrl: './img/avator.jpg'
     }
   },
-
-  getUserInfo() {
-
-  },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad() {
-    app.wechat.login()
-      .then(res => {
-        if (res.code) {
-          console.log('登录成功！' + res.code)
-          app.wechat.getUserInfo()
-            .then(res =>{
-              this.setData({ userInfo: res.userInfo });
+    let self = this;
+    wx.getSetting({
+      success: function (res) {
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+          wx.getUserInfo({
+            success: function (res) {
+              self.setData({
+                userInfo: res.userInfo
+              })
             }
-          )
-        } else {
-          console.error('获取用户登录态失败！' + res.errMsg)
+          })
         }
-      })
+      }
+    })
+  },
+  
+  // 机器人聊天
+  contact(){
+    wx.navigateTo({
+      url: '../contact/contact',
+    })
   }
 })
