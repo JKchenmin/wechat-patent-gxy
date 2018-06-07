@@ -13,31 +13,25 @@ Page({
       avatarUrl: './img/avator.jpg'
     }
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad() {
-    let self = this;
-    wx.getSetting({
-      success: function (res) {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
-          wx.getUserInfo({
-            success: function (res) {
-              self.setData({
-                userInfo: res.userInfo
-              })
-            }
-          })
-        }
-      }
+  onLoad(){
+    this.setData({
+      userInfo: app.globalData.userInfo
     })
   },
-  
   // 机器人聊天
-  contact(){
+  contact() {
     wx.navigateTo({
-      url: '../contact/contact',
+      url: './contact/contact',
+    })
+  },
+  setting(){
+    wx.navigateTo({
+      url: './setting/setting',
+    })
+  },
+  notice() {
+    wx.navigateTo({
+      url: './notice/notice',
     })
   }
 })

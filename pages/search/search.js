@@ -1,7 +1,6 @@
 // 引入自定义的一个数据格式 ArrayList
 let ArrayList = require("./../../utils/arrayList.js")
 const wechat = require('./../../utils/wechat.js')
-const api = require('./../../utils/data.js')
 Page({
   /**
    * 页面的初始数据
@@ -42,7 +41,7 @@ Page({
     })
 
     //请求后台数据
-    wechat.request(api.list.get_v2_search_index)
+    wechat.request("https://cloud-doc.leyix.com/api/v2/search-index")
       .then(res => this.setData({ hot_tag: res.data}),err => console.log(err))
 
 
@@ -59,7 +58,7 @@ Page({
     })
     //请求后台数据
     wx.request({
-      url: api.list.get_v2_search,
+      url: "https://cloud-doc.leyix.com/api/v2/search",
       data: {
         key: this.data.key,
         page: this.data.page
@@ -156,7 +155,7 @@ Page({
     }
     //请求后台数据
     wx.request({
-      url: api.list.get_v2_search_tip,
+      url: "https://cloud-doc.leyix.com/api/v2/title-tip",
       data: {
         key: key
       },
@@ -178,6 +177,9 @@ Page({
       more: false,
       no_more: false,
       page: 1,
+    })
+    wx.navigateTo({
+      url: '../board/board',
     })
   },
   go_info: function (event) {

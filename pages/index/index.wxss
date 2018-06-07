@@ -7,7 +7,7 @@
 }
 .index-btn-to{
   position:absolute;
-  bottom:45rpx;
+  bottom:50rpx;
   left:50%;
   width:120rpx;
   margin-left:-60rpx;

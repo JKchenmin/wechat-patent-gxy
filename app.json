@@ -1,17 +1,22 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/board/board",
     "pages/study/study",
+    "pages/doc-info/doc-info",
+    "pages/board/board",
     "pages/search/search",
-    "pages/contact/contact",
-    "pages/profile/profile"
+    
+    "pages/profile/profile",
+    "pages/profile/setting/setting",
+    "pages/profile/notice/notice",
+    "pages/profile/contact/contact",
+    "pages/temp/temp"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#FFF",
     "navigationBarTitleText": "人工智能 AI",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "color": "#000000",
@@ -36,7 +41,6 @@
         "selectedIconPath": "images/tabbar/mine_fill.png"
       }
     ]
-    },
-    "debug": false
-  
+  },
+  "debug": false
 }

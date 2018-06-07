@@ -1,0 +1,34 @@
+<view class="container">
+  <scroll-view scroll-y="true" class="scroll-view" bindscrolltolower="" enable-back-to-top="true" scroll-top="100">
+    <block wx:for="{{dialog.data}}" wx:key="index">
+      <view class="dialog-item" style="float:{{item.robot?'left':'right'}}">
+        <view class="avator" style="float:{{item.robot?'left':'right'}}">
+          <image class="img" src="{{item.robot?robotInfo.imgUrl:userInfo.avatarUrl}}" mode="aspectFill"></image>
+        </view>
+        <view class="content {{item.robot?'arrow-left-content':'arrow-right-content'}}">
+          <block wx:if="{{item.text!=''}}">
+            <view class="msg">{{item.text}}</view>
+          </block>
+          <block wx:if="{{item.cook.name!=undefined}}">
+            <view class="msg">
+              <view class="name">{{item.cook.name}}</view>
+              <image class="cook" src="{{item.cook.icon}}" mode="widthFix"></image>
+              <view class="info">{{item.cook.info}}</view>
+            </view>
+          </block>
+          <block wx:if="{{item.hotel.name!=undefined}}">
+            <view class="msg">
+              <view class="name">{{item.hotel.name}}</view>
+              <image class="cook" src="{{item.hotel.icon}}" mode="widthFix"></image>
+              <view class="info">{{item.hotel.info}}</view>
+            </view>
+          </block>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+  <view class="input-text">
+    <input class="input-mes" type="text" value="{{inputText}}" bindblur='changeVal'></input>
+    <button class="input-button" bindtap="sendText">发送</button>
+  </view>
+</view>

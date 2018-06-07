@@ -22,9 +22,9 @@ Page(Object.assign({}, Zan.Field, {
     col2: [],
     boards: [{
       swiperBg: [
-        './img/board_bg1.png',
+        './img/board_bg1.jpg',
         './img/board_bg2.png',
-        './img/board_bg1.png'
+        './img/board_bg3.png'
       ]
     }]
   },

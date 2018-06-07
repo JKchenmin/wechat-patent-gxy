@@ -1,0 +1,9 @@
+.container{
+  padding: 15rpx 10rpx;
+  height: 100vh;
+  width: 750rpx;
+  box-sizing: border-box;
+}
+.zan-btn {
+  margin-top: calc(100vh - 45px - 30rpx);
+}

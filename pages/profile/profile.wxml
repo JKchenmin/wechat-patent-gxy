@@ -3,7 +3,7 @@
 
   <view class="flex-column-item user">
     <view class="user-container">
-      <view class="zan-icon zan-icon-setting"></view>
+      <view class="zan-icon zan-icon-setting" bindtap="setting"></view>
       <image src="./img/avator_bg.jpeg" class="avator-bg" mode="scaleToFill" />
       <view style="position:absolute;z-index:1;width: calc(100vw - 30rpx);height:280rpx;">
         <image src="{{userInfo.avatarUrl}}" class="user-avatar" />
@@ -53,7 +53,7 @@
     </view>
     <view class="zan-panel">
       <view style="padding: 20rpx;">
-        <view class="zan-icon zan-icon-add panel-icon-left"></view>发布团队信息
+        <view class="zan-icon zan-icon-add panel-icon-left"></view>发布需求
         <view class="zan-icon zan-icon-arrow panel-icon-right"></view>
       </view>
     </view>
@@ -65,6 +65,7 @@
     </view>
     <!-- add icon -->
     <view class="contact-robot" bindtap="contact">
+      <image style="width:60rpx;height:60rpx;" src="./img/robot.png" mode="aspectFill"></image>
     </view>
   </view>
   <!-- funcs end -->

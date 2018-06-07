@@ -151,6 +151,7 @@ end
   height: 60rpx;
   width: 60rpx;
   bottom: 30rpx;
-  right: 20rpx;
-  background: gray;
+  right: 30rpx;
+  border-radius: 60rpx;
+  box-shadow: 5rpx 7rpx 9rpx rgba(0,0,0,0.6);
 }

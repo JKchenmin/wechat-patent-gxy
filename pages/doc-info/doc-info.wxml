@@ -1,0 +1,29 @@
+<block wx:if="{{show_page}}">
+  <view class="">
+    <view class="book-detail-x">
+      <image src="{{doc.cover_url}}" class="book-cover-blur"></image>
+      <view class="info-top">
+        <view class="top-main">
+          <image class="info-pic" src="{{doc.cover_url}}"></image>
+          <view class="main-r">
+            <text class="info-title">{{doc.title}}</text>
+            <text class="info-username">作者：{{doc.user.nick_name}}</text>
+            <text class="info-class">类别：{{doc.doc_class.title}}</text>
+            <text class="info-from">来源：{{doc.source}}</text>
+          </view>
+        </view>
+        <view class="">
+          <view class="top-btn-group">
+            <button size="mini" class="btn" type="warn" bindtap="go_menu" data-id="{{doc.id}}">阅读文档</button>
+            <button size="mini" class="btn" disabled="{{is_add}}" bindtap="add_my_doc" data-id="{{doc.id}}">{{add_text}}</button>
+            <button size="mini" class="btn" open-type="share">分享文档</button>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="desc-main">
+      <view class="border-b"></view>
+      <view class="top-info-desc">{{doc.desc}}</view>
+    </view>
+  </view>
+</block>

@@ -21,7 +21,17 @@ App({
   globalData: {
     name: '人工智能 AI',
     version: '1.1.0',
-    currentCity: '北京'
+    currentCity: '北京',
+    login:{},
+    header: {
+      Cookie: '',
+      SessionId: ''
+    },
+    userInfo: {
+      wechat: 'WEDN-NET',
+      nickName: 'Default',
+      avatarUrl: './img/avator.jpg'
+    }
   },
   /**
    * WeChat API
@@ -30,8 +40,41 @@ App({
   /**
    * 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
    */
+  
   onLaunch: function () {
     console.log("my-info: App Launch");
+    
+    let self = this;
+    /**
+     * 获取位置信息
+     */
+    // 实例化腾讯地图API核心类
+    qqmapsdk = new QQMapWX({
+      //自己申请的key
+      key: 'BYCBZ-PWMHS-PRBOA-6MTOP-XZRAF-5JBLY'
+    });
+    // 调用微信api获取经纬度
+    wechat.getLocation().then(res => {
+      const { latitude, longitude } = res
+      console.log("你的经度:" + latitude + "\t你的纬度:" + longitude);
+      qqmapsdk.reverseGeocoder({
+        location: { latitude, longitude },
+        success: res => {
+          //把位置信息存到globalDara里面
+          self.globalData.client = res.result;
+          //把dialogid存到globalDara里面
+          self.globalData.client.dialogId = (new Date()).getTime();
+        },
+        fail: res => {
+          console.log(res);
+        }
+      })
+    })
+    //清空服务器已有账号
+    wx.request({
+      url: 'http://localhost:3030/api/logout',
+      method: 'POST'
+    })
   },
   /**
    * 当小程序启动，或从后台进入前台显示，会触发 onShow
@@ -51,25 +94,3 @@ App({
   }
 })
 
-/**
- * 获取位置信息
- */
-// 实例化腾讯地图API核心类
-qqmapsdk = new QQMapWX({
-  //自己申请的key
-  key: 'BYCBZ-PWMHS-PRBOA-6MTOP-XZRAF-5JBLY'
-});
-// 调用微信api获取经纬度
-wechat.getLocation().then(res => {
-  const { latitude, longitude } = res
-  console.log("你的经度:" + latitude + "\t你的纬度:" + longitude);
-  qqmapsdk.reverseGeocoder({
-    location: { latitude, longitude },
-    success: res => {
-      console.log("你的地理位置:\n" + res.result.address);
-    },
-    fail: res => {
-      console.log(res);
-    }
-  })
-})
