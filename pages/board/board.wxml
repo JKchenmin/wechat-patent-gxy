@@ -1,11 +1,13 @@
-<import src="/dist/zanui/field/index.wxml" />
+<!-- <import src="/dist/zanui/field/index.wxml" /> -->
 <view class="container">
   <view class="slide" scroll-y="false">
     <swiper indicator-dots="true" autoplay="true" interval="3000" duration="1500">
       <swiper-item wx:for="{{ boards[0].swiperBg }}" wx:key="id">
         <!-- 
-      aspectFill 保持纵横比缩放图片，只保证图片的短边能完全显示出来。也就是说，图片通常只在水平或垂直方向是完整的，另一个方向将会发生截取。
-      aspectFill同样保持图片的宽高比不会变形。但它让图片完全填满整个容器，类似于scaleToFill这种模式。不同的是，scaleToFill会改变图片的宽高比，而aspectFill不会。 
+      (变形缩放)scaleToFill	不保持纵横比缩放图片，使图片的宽高完全拉伸至填满 image 元素
+      (按比例缩放)aspectFit	 保持纵横比缩放图片，使图片的长边能完全显示出来。也就是说，可以完整地将图片显示出来。
+      (截取缩放)aspectFill 保持纵横比缩放图片，只保证图片的短边能完全显示出来。也就是说，图片通常只在水平或垂直方向是完整的，另一个方向将会发生截取。
+      widthFix	宽度不变，高度自动变化，保持原图宽高比不变
       -->
         <image src="{{item}}" mode="aspectFill" />
       </swiper-item>
@@ -16,22 +18,10 @@
       <text class="search-text">点击搜索</text>
       <icon class="search-icon" type="search" size="15" />
     </view>
-    <view style="display:none">
-      <image wx:for="{{images}}" wx:key="id" id="{{item.id}}" src="{{item.pic}}" bindload="onImageLoad"></image>
-    </view>
-    <scroll-view scroll-y="true" style="height:{{scrollH}}px" bindscrolltolower="loadImages">
-      <view style="width:100%">
-        <view class="img_item">
-          <view wx:for="{{col1}}" wx:key="id">
-            <image src="{{item.pic}}" style="width:100%;height:{{item.height}}px"></image>
-          </view>
-        </view>
-        <view class="img_item">
-          <view wx:for="{{col2}}" wx:key="id">
-            <image src="{{item.pic}}" style="width:100%;height:{{item.height}}px"></image>
-          </view>
-        </view>
+    <view class="rest-container" style="height:{{rest_rpx}}rpx;">
+      <view class='demand-container' style="height:{{rest_rpx_half}}rpx;" bindtap='to_demand_hall'>
       </view>
-    </scroll-view>
+      <view class='product-container' style="height:{{rest_rpx_half}}rpx;" bindtap='to_product_hall'></view>
+    </view>
   </view>
 </view>

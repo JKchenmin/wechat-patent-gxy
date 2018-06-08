@@ -1,0 +1,22 @@
+/* 瀑布流 */
+/* 
+.col {
+  display: block;
+  float: left;
+  width: 250rpx;
+  height: auto;
+}
+
+.img_con {
+  background-color: #fff;
+  width: 250rpx;
+  display: block;
+  box-sizing: border-box;
+  cursor: pointer;
+} */
+.img_item {
+  width: 48%;
+  margin: 1%;
+  display: inline-block;
+  vertical-align: top;
+}

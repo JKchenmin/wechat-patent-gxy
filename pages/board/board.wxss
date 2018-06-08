@@ -1,3 +1,5 @@
+/* swiper轮播 */
+
 .slide swiper {
   width: 100vw;
 }
@@ -5,45 +7,6 @@
 .slide swiper image {
   height: 100%;
   width: 100%;
-}
-
-.zan-icon {
-  margin-right: 30rpx;
-  font-size: 50rpx;
-}
-
-/* pages/search/search.wxss */
-
-.zan-field__input {
-  height: 60rpx;
-  padding: 0 15rpx;
-  border: 1rpx solid rgba(0, 0, 0, 0.2);
-  font-size: 26rpx;
-  border-radius: 12rpx;
-  background-color: transparent;
-}
-
-.zan-search-content {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.zan-search-text {
-  font-size: 26rpx;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.zan-card {
-  padding: 0;
-}
-
-.zan-card__thumb {
-  width: 260rpx;
-  height: 260rpx;
-  margin: 30rpx;
-  margin-left: 0;
-  margin-bottom: 0;
 }
 
 /* search框 */
@@ -71,25 +34,17 @@
   height: 30rpx;
 }
 
-/* 瀑布流 */
-/* 
-.col {
-  display: block;
-  float: left;
-  width: 250rpx;
-  height: auto;
+/* 剩下的部分，需求大厅和产品大厅 */
+
+.rest-container {
+  width: 746rpx;
 }
 
-.img_con {
-  background-color: #fff;
-  width: 250rpx;
-  display: block;
-  box-sizing: border-box;
-  cursor: pointer;
-} */
-.img_item {
-  width: 48%;
-  margin: 1%;
-  display: inline-block;
-  vertical-align: top;
+.demand-container {
+  width: 100%;
+  background-color: beige;
+}
+.product-container{
+  width: 100%;
+  background-color: pink;
 }

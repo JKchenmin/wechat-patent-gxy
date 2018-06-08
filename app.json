@@ -3,8 +3,11 @@
     "pages/index/index",
     "pages/study/study",
     "pages/doc-info/doc-info",
+
     "pages/board/board",
     "pages/search/search",
+    "pages/product-hall/product-hall",
+    "pages/demand-hall/demand-hall",
     
     "pages/profile/profile",
     "pages/profile/setting/setting",

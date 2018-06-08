@@ -15,14 +15,6 @@ Page({
         if (res.code) {
           app.globalData.login.code = res.code
           let sessionJson = JSON.parse(JSON.stringify(app.globalData.login))
-          // wx.request({
-          //   url: 'http://localhost:3030/api/sessionPrepare',
-          //   method: 'POST',
-          //   data: sessionJson,
-          //   dataType: 'json',
-          //   success: (res) => {
-          //   } 
-          // })
           // 获取openId
           wx.request({
             url: 'https://api.weixin.qq.com/sns/jscode2session',

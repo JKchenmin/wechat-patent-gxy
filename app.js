@@ -42,8 +42,6 @@ App({
    */
   
   onLaunch: function () {
-    console.log("my-info: App Launch");
-    
     let self = this;
     /**
      * 获取位置信息
@@ -80,7 +78,6 @@ App({
    * 当小程序启动，或从后台进入前台显示，会触发 onShow
    */
   onShow: function () {
-    console.log("my-info: App onShow");
   },
   /**
    * 当小程序从前台进入后台，会触发 onHide
@@ -90,7 +87,6 @@ App({
     关闭小程序（基础库版本1.1.0开始支持）： 当用户从扫一扫、转发等入口(场景值为1007, 1008, 1011, 1025)进入小程序，且没有置顶小程序的情况下退出，小程序会被销毁。
    */
   onHide: function () {
-    console.log("my-info: App onHide");
   }
 })
 
