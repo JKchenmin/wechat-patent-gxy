@@ -27,7 +27,7 @@ Page({
     //获取搜索记录 
     let my_search = '';
     //调用api
-    if ( typeof wx.getStorageSync("my_search") == 'object'){
+    if (typeof wx.getStorageSync("my_search") == 'object') {
       my_search = wx.getStorageSync("my_search");
     }
     //如果为空
@@ -41,10 +41,8 @@ Page({
     })
 
     //请求后台数据
-    wechat.request("https://cloud-doc.leyix.com/api/v2/search-index")
-      .then(res => this.setData({ hot_tag: res.data}),err => console.log(err))
-
-
+    wechat.request("http://localhost:3030/api/getSearchHistory")
+      .then(res => this.setData({ hot_tag: res.data }), err => console.log(err))
   },
   // blurinput(event){
   //   //完成双向数据绑定
@@ -206,58 +204,5 @@ Page({
       title: '搜索中',
     })
     this.get_data()
-  },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-    if (!this.data.is_load && this.data.more) {
-      this.setData({
-        page: this.data.page + 1
-      })
-      this.get_data()
-    }
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
   }
 })

@@ -42,9 +42,49 @@
 
 .demand-container {
   width: 100%;
-  background-color: beige;
+  padding: 20rpx 50rpx;
+  box-sizing: border-box;
+  display: block;
+  position: relative;
 }
-.product-container{
+
+.product-container {
   width: 100%;
-  background-color: pink;
+  padding: 20rpx 50rpx;
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+}
+
+.header {
+  color: #8a8a8a;
+  font-size: 30rpx;
+}
+
+.content {
+  display: block;
+  padding-left: 50rpx;
+}
+
+.content li {
+  display: block;
+  list-style: none;
+  border-top-color: 1px solid #eee;
+  font-family: "Open Sans", "Segoe UI", "Helvetica", sans-serif;
+  font-size: 26rpx;
+  line-height: 50rpx;
+  height: 50rpx;
+  color: #d6d6d6;
+}
+
+.exchange {
+  position: absolute;
+  right: 100rpx;
+  top: 50%;
+  margin-top: -35rpx;
+}
+
+.exchange image {
+  width: 70rpx;
+  height: 70rpx;
 }

@@ -5,16 +5,22 @@
       <image wx:for="{{images}}" wx:key="id" id="{{item.id}}" src="{{item.pic}}" bindload="onImageLoad"></image>
     </view>
   </view>
-  <scroll-view scroll-y="true" style="height:{{scrollH}}px" bindscrolltolower="loadImages">
+  <scroll-view scroll-y="true" style="height:{{scrollH}}px" bindscrolltolower="refreshImage">
     <view style="width:100%">
       <view class="img_item">
         <view wx:for="{{col1}}" wx:key="id">
-          <image src="{{item.pic}}" style="width:100%;height:{{item.height}}px"></image>
+          <view class="item_con">
+            <image class="item_pic" src="{{item.pic}}" style="width:100%;height:{{item.height}}px" mode="aspectFit"></image>
+            <view class="item_text">{{item.text}}</view>
+          </view>
         </view>
       </view>
       <view class="img_item">
         <view wx:for="{{col2}}" wx:key="id">
-          <image src="{{item.pic}}" style="width:100%;height:{{item.height}}px"></image>
+          <view class="item_con">
+            <image class="item_pic" src="{{item.pic}}" style="width:100%;height:{{item.height}}px" mode="aspectFit"></image>
+            <view class="item_text">{{item.text}}</view>
+          </view>
         </view>
       </view>
     </view>

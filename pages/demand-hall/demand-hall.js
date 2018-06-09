@@ -2,7 +2,7 @@ const app = getApp()
 const util = require('../../utils/util.js')
 let col1H = 0;
 let col2H = 0;
-
+let prepared = true;
 Page({
   data: {
     scrollH: 0,
@@ -45,12 +45,14 @@ Page({
 
     for (let i = 0; i < images.length; i++) {
       let img = images[i];
+      // console.log(img.id)
+      // console.log(imageId)
       if (img.id === imageId) {
         imageObj = img;
         break;
       }
     }
-
+    
     imageObj.height = imgHeight;
 
     let loadingCount = this.data.loadingCount - 1;
@@ -79,25 +81,33 @@ Page({
 
     this.setData(data);
   },
-  loadImages: function () {
-    let images = [
-      { pic: "./img/1.jpg", height: 0 },
-      { pic: "./img/2.jpg", height: 0 },
-      { pic: "./img/4.jpg", height: 0 },
-      { pic: "./img/7.jpg", height: 0 },
-      { pic: "./img/3.jpg", height: 0 },
-      { pic: "./img/5.jpg", height: 0 },
-      { pic: "./img/6.jpg", height: 0 },
-      { pic: "./img/8.jpg", height: 0 },
-      { pic: "./img/9.jpg", height: 0 }
-    ];
-    let baseId = "img-" + (+new Date());
-    for (let i = 0; i < images.length; i++) {
-      images[i].id = baseId + "-" + i;
+  loadImages () {
+    let images = [];
+    let self = this;
+    wx.request({
+      url: 'http://localhost:3030/api/getIndexDemand',
+      method: 'GET',
+      dataType: 'json',
+      success:(res)=>{
+        console.log(res.data);
+        images = res.data;
+        let baseId = "img-" + (+new Date());
+        for (let i = 0; i < images.length; i++) {
+          images[i].id = baseId + "-" + i;
+        }
+        self.setData({
+          loadingCount: images.length,
+          images: images
+        });
+        
+      }
+    })
+  },
+  //更新图片,预加载
+  refreshImage(){
+    if(prepared == true){
+      this.loadImages();
     }
-    this.setData({
-      loadingCount: images.length,
-      images: images
-    });
   }
+
 })

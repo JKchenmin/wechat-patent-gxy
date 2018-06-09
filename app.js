@@ -42,6 +42,7 @@ App({
    */
   
   onLaunch: function () {
+    
     let self = this;
     /**
      * 获取位置信息

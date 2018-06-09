@@ -1,4 +1,0 @@
-<view class="container">
-  <image class="img_item" src="{{imgUrl}}" mode="widthFix" binderror="onImageError" bindload="onImageLoad"></image>
-</view>
-

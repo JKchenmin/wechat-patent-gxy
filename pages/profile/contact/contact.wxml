@@ -12,15 +12,13 @@
           <block wx:if="{{item.cook.name!=undefined}}">
             <view class="msg">
               <view class="name">{{item.cook.name}}</view>
-              <image class="cook" src="{{item.cook.icon}}" mode="widthFix"></image>
+                <image class="cook" data-url="{{item.cook.detailurl}}" bindtap="to_temp" src="{{item.cook.icon}}" mode="widthFix"></image>
               <view class="info">{{item.cook.info}}</view>
             </view>
           </block>
-          <block wx:if="{{item.hotel.name!=undefined}}">
+          <block wx:if="{{item.hotel.url!=undefined}}">
             <view class="msg">
-              <view class="name">{{item.hotel.name}}</view>
-              <image class="cook" src="{{item.hotel.icon}}" mode="widthFix"></image>
-              <view class="info">{{item.hotel.info}}</view>
+                <view class="name" data-url="{{item.hotel.url}}" bindtap="to_temp">{{item.hotel.url}}</view>
             </view>
           </block>
         </view>

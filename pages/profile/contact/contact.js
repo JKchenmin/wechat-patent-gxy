@@ -28,9 +28,7 @@ Page({
     robotInfo: {
       imgUrl: 'http://wx3.sinaimg.cn/mw690/896d20a7gy1fs2oky5m8aj201s01smwy.jpg'
     },//机器人的信息
-    userInfo: {
-      imgUrl: app.globalData.userInfo.avatarUrl
-    },//登录用户的信息
+    userInfo: {},//登录用户的信息
     dialog: {
       length: 0,
       data: [
@@ -45,7 +43,11 @@ Page({
     inputText: ''//正在输入的信息
   },
   onLoad() {
+    
     let self = this;
+    self.setData({
+      userInfo: app.globalData.userInfo
+    })
     wx.request({
       url: 'http://localhost:3030/api/getProfileDialog',
       method: 'GET',
@@ -63,11 +65,17 @@ Page({
       inputText: e.detail.value
     })
   },
+  to_temp(e) {
+    let url = e.currentTarget.dataset.url
+    url = url.replace(/&/g, "qqqwwweeeaaa").replace(/=/g, "qqqwwweeebbb")
+    wx.navigateTo({
+      url: "../../temp/temp?a=1&url=" + url
+    })
+  },
   //点击发送按钮
   sendText() {
     let self = this
     //第一步，包装数据发送POST请求给图灵机器人
-    
     //2. location
     postData.perception.selfInfo.location.city = app.globalData.client.address_component.city;
     postData.perception.selfInfo.location.province = app.globalData.client.address_component.province;
@@ -83,10 +91,11 @@ Page({
       method: 'POST',
       dataType: 'json',
       success: res => {
+        console.log(res.data)
         //修改res的格式
         let dialog = util.formatDialog(res.data);
         let dialogData = JSON.parse(JSON.stringify(dialog));
-        
+
         //第三步，把信息更新到视图
         let obj = {
           time: util.formatTime(new Date()),
@@ -97,7 +106,9 @@ Page({
           hotel: {}
         };
         dialogData.dialog.unshift(obj)
-        console.log(dialogData)
+        self.setData({
+          inputText: ''
+        })
         //第四步，跟新服务器端数据
         wx.request({
           url: 'http://localhost:3030/api/setDialog',
@@ -106,16 +117,17 @@ Page({
           dataType: 'json',
           header: app.globalData.header,
           success: (res) => {
-            console.log(res);
+
+            // 青椒土豆怎么做
             wx.request({
               url: 'http://localhost:3030/api/getProfileDialog',
               method: 'GET',
               dataType: 'json',
               success: res => {
-                util.formatGetDialog(res.data.dialog)
                 self.setData({
                   dialog: res.data.dialog
                 })
+                console.log(self.data.dialog);
               }
             })
           },
@@ -130,7 +142,6 @@ Page({
         console.log(res);
       }
     })
-    
 
   }
 

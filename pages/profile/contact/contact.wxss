@@ -22,7 +22,11 @@
   background-color: #fff;
 }
 
-.avator, .avator .img {
+.avator {
+  height: 60rpx;
+  width: 60rpx;
+}
+.avator .img {
   height: 60rpx;
   width: 60rpx;
 }

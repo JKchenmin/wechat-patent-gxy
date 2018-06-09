@@ -1,4 +1,3 @@
-<!-- <import src="/dist/zanui/field/index.wxml" /> -->
 <view class="container">
   <view class="slide" scroll-y="false">
     <swiper indicator-dots="true" autoplay="true" interval="3000" duration="1500">
@@ -19,9 +18,32 @@
       <icon class="search-icon" type="search" size="15" />
     </view>
     <view class="rest-container" style="height:{{rest_rpx}}rpx;">
-      <view class='demand-container' style="height:{{rest_rpx_half}}rpx;" bindtap='to_demand_hall'>
+      <view class='demand-container' style="height:{{rest_rpx_half}}rpx;" >
+        <view class="header">需求列表</view>
+        <ul class="content">
+          <li>需求1......</li>
+          <li>需求2......</li>
+          <li>需求3......</li>
+          <li>需求4......</li>
+          <li>需求5......</li>
+        </ul>
+        <view class="exchange">
+          <image src="img/exchange.png" mode="aspectFit" bindtap='to_demand_hall'></image>
+        </view>
       </view>
-      <view class='product-container' style="height:{{rest_rpx_half}}rpx;" bindtap='to_product_hall'></view>
+      <view class='product-container' style="height:{{rest_rpx_half}}rpx;" >
+        <view class="header">产品列表</view>
+        <ul class="content">
+          <li>产品1......</li>
+          <li>产品2......</li>
+          <li>产品3......</li>
+          <li>产品4......</li>
+          <li>产品5......</li>
+        </ul>
+        <view class="exchange">
+          <image src="img/exchange.png" mode="aspectFit" bindtap='to_product_hall'></image>
+        </view>
+      </view>
     </view>
   </view>
 </view>

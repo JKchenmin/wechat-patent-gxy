@@ -1,22 +1,23 @@
-/* 瀑布流 */
-/* 
-.col {
-  display: block;
-  float: left;
-  width: 250rpx;
-  height: auto;
-}
-
-.img_con {
-  background-color: #fff;
-  width: 250rpx;
-  display: block;
-  box-sizing: border-box;
-  cursor: pointer;
-} */
+/* 瀑布流 */ 
 .img_item {
   width: 48%;
   margin: 1%;
-  display: inline-block;
+  display: inline-block; 
   vertical-align: top;
+}
+.item_con{
+  margin-top: 10rpx;
+  position: relative;
+}
+.item_pic {
+  display: block;
+}
+.item_text {
+  position: absolute;
+  bottom: 0;
+  width:100%;
+  background-color: rgba(0,0,0,0.3);
+  color: #fff;
+  font-size: 24rpx;
+  line-height: 24rpx;
 }

@@ -22,7 +22,6 @@ const formatDialog = (getData) => {
   let cook = {};
   let hotel = {};
   getData.results.forEach(function (item, index) {
-    // console.log(item);
     if (item.resultType == "text") {
       let obj = {
         time: formatTime(new Date()),
@@ -33,9 +32,8 @@ const formatDialog = (getData) => {
         hotel: {}
       };
       obj.text = item.values.text;
-      returnArr.push(obj);
+      returnArr.unshift(obj);
     } else if (item.resultType == "news") {
-      
       item.values.news.forEach(function (item, index) {
         let obj = {
           time: formatTime(new Date()),
@@ -57,7 +55,7 @@ const formatDialog = (getData) => {
         cook: {},
         hotel: {}
       };
-      Object.assign(obj.hotel, item.values.url);
+      obj.hotel.url = item.values.url;
       returnArr.push(obj);
     }
   })
@@ -65,11 +63,9 @@ const formatDialog = (getData) => {
   dialog.dialogId = app.globalData.client.dialogId;
   dialog.openId = app.globalData.openId;
   dialog.dialog = returnArr;
-
   return dialog;
 }
 const formatGetDialog = (getData) => {
-  console.log(getData)
 
 }
 module.exports = {
